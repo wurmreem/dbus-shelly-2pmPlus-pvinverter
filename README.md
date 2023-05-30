@@ -54,7 +54,7 @@ Thats it 😄
 
 ## Install & Configuration
 ### Get the code
-Just grap a copy of the main branche and copy them to a folder under `/data/` e.g. `/data/dbus-shelly-1pm-pvinverter`.
+Just grap a copy of the main branche and copy them to a folder under `/data/` e.g. `/data/dbus-shelly-1pmplus-pvinverter`.
 After that call the install.sh script.
 
 The following script should do everything for you:
