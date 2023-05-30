@@ -21,7 +21,7 @@ from vedbus import VeDbusService
 
 
 class DbusShelly1pmService:
-  def __init__(self, servicename, paths, productname='Shelly 1PM', connection='Shelly 1PM HTTP JSON service'):
+  def __init__(self, servicename, paths, productname='Shelly 1PM Plus', connection='Shelly 1PM Plus HTTP JSON service'):
     config = self._getConfig()
     deviceinstance = int(config['DEFAULT']['Deviceinstance'])
     customname = config['DEFAULT']['CustomName']
@@ -67,8 +67,8 @@ class DbusShelly1pmService:
     gobject.timeout_add(self._getSignOfLifeInterval()*60*1000, self._signOfLife)
  
   def _getShellySerial(self):
-    meter_data = self._getShellyData()  
-    
+    meter_data = self._getShellyConfig()  
+      
     if not meter_data['mac']:
         raise ValueError("Response does not contain 'mac' attribute")
     
@@ -97,21 +97,33 @@ class DbusShelly1pmService:
     accessType = config['DEFAULT']['AccessType']
     
     if accessType == 'OnPremise': 
-        URL = "http://%s:%s@%s/status" % (config['ONPREMISE']['Username'], config['ONPREMISE']['Password'], config['ONPREMISE']['Host'])
+        URL = "http://%s:%s@%s/rpc/Switch.GetStatus?id=0" % (config['ONPREMISE']['Username'], config['ONPREMISE']['Password'], config['ONPREMISE']['Host'])
         URL = URL.replace(":@", "")
     else:
         raise ValueError("AccessType %s is not supported" % (config['DEFAULT']['AccessType']))
     
     return URL
+   
+  def _getShellyConfigUrl(self):
+    config = self._getConfig()
+    accessType = config['DEFAULT']['AccessType']
     
+    if accessType == 'OnPremise': 
+        URL = "http://%s:%s@%s/rpc/Sys.GetStatus" % (config['ONPREMISE']['Username'], config['ONPREMISE']['Password'], config['ONPREMISE']['Host'])
+        URL = URL.replace(":@", "")
+    else:
+        raise ValueError("AccessType %s is not supported" % (config['DEFAULT']['AccessType']))
+    
+    return URL
+   
  
   def _getShellyData(self):
     URL = self._getShellyStatusUrl()
     meter_r = requests.get(url = URL)
-    
+        
     # check for response
     if not meter_r:
-        raise ConnectionError("No response from Shelly 1PM - %s" % (URL))
+        raise ConnectionError("No response from Shelly Plus1PM - %s" % (URL))
     
     meter_data = meter_r.json()     
     
@@ -122,6 +134,24 @@ class DbusShelly1pmService:
     
     return meter_data
  
+ 
+  def _getShellyConfig(self):
+    URL = self._getShellyConfigUrl()
+    meter_r = requests.get(url = URL)
+        
+    # check for response
+    if not meter_r:
+        raise ConnectionError("No response from Shelly Plus1PM - %s" % (URL))
+    
+    meter_data = meter_r.json()     
+    
+    # check for Json
+    if not meter_data:
+        raise ValueError("Converting response to JSON failed")
+    
+    
+    return meter_data
+
  
   def _signOfLife(self):
     logging.info("--- Start: sign of life ---")
@@ -145,8 +175,8 @@ class DbusShelly1pmService:
          pre = '/Ac/' + phase
          
          if phase == pvinverter_phase:
-           power = meter_data['meters'][0]['power']
-           total = meter_data['meters'][0]['total']
+           power = meter_data['apower']
+           total = meter_data['aenergy']['total']
            voltage = 230
            current = power / voltage
            
