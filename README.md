@@ -1,5 +1,6 @@
 # dbus-shelly-1pm-pvinverter
-Integrate Shelly 1PM into Victron Energies Venus OS
+Integrate Shelly 1PM PLUS into Victron Energies Venus OS
+Only for Shelly 1PM PLUS, the new Model
 
 ## Purpose
 With the scripts in this repo it should be easy possible to install, uninstall, restart a service that connects the Shelly 1PM to the VenusOS and GX devices from Victron.
@@ -16,10 +17,10 @@ This project is my first on GitHub and with the Victron Venus OS, so I took some
 ## How it works
 ### My setup
 - 3-Phase installation
-- Shelly 1PM with latest firmware (20220209-094317/v1.11.8-g8c7bb8d)
+- Shelly 1PM Plus with latest firmware (20220209-094317/v1.11.8-g8c7bb8d)
   - Measuring AC output of SUN-2000 GTIL on phase L3
   - Connected to Wifi netowrk "A" with a known IP  
-- Shelly 1PM with latest firmware (20220209-094317/v1.11.8-g8c7bb8d)
+- Shelly 1PM Plus with latest firmware (20220209-094317/v1.11.8-g8c7bb8d)
   - Measuring AC output of Envertech EVT-500 and Hoymiles HM-800 on phase L3
   - Connected to Wifi netowrk "A" with a known IP  
 - Shelly 3EM used as a grid meter
