@@ -1,10 +1,12 @@
 # dbus-shelly-1pm-pvinverter
+This Fork is for Shelly 1PM Plus Only!!!!!     
 Integrate Shelly 1PM PLUS into Victron Energies Venus OS
-Only for Shelly 1PM PLUS, the new Model
+
 
 ## Purpose
 With the scripts in this repo it should be easy possible to install, uninstall, restart a service that connects the Shelly 1PM to the VenusOS and GX devices from Victron.
 Idea is inspired on @fabian-lauer project linked below.
+Forked from viktr0rm and changed to the new Shelly 1PM Plus
 
 
 
@@ -57,11 +59,11 @@ After that call the install.sh script.
 
 The following script should do everything for you:
 ```
-wget https://github.com/vikt0rm/dbus-shelly-1pm-pvinverter/archive/refs/heads/main.zip
-unzip main.zip "dbus-shelly-1pm-pvinverter-main/*" -d /data
-mv /data/dbus-shelly-1pm-pvinverter-main /data/dbus-shelly-1pm-pvinverter
-chmod a+x /data/dbus-shelly-1pm-pvinverter/install.sh
-/data/dbus-shelly-1pm-pvinverter/install.sh
+wget https://github.com/lennardini/dbus-shelly-1pmPlus-pvinverter/archive/refs/heads/main.zip
+unzip main.zip "dbus-shelly-1pmPlus-pvinverter-main/*" -d /data
+mv /data/dbus-shelly-1pmPlus-pvinverter-main /data/dbus-shelly-1pmPlus-pvinverter
+chmod a+x /data/dbus-shelly-1pmPlus-pvinverter/install.sh
+/data/dbus-shelly-1pmPlus-pvinverter/install.sh
 rm main.zip
 ```
 ⚠️ Check configuration after that - because service is already installed an running and with wrong connection data (host, username, pwd) you will spam the log-file
