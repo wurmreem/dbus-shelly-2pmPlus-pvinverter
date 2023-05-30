@@ -1,4 +1,4 @@
-# dbus-shelly-1pm-pvinverter
+# dbus-shelly-1pmPlus-pvinverter
 This Fork is for Shelly 1PM Plus Only!!!!!     
 Integrate Shelly 1PM PLUS into Victron Energies Venus OS
 
