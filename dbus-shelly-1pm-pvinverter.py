@@ -177,8 +177,8 @@ class DbusShelly1pmService:
          if phase == pvinverter_phase:
            power = meter_data['apower']
            total = meter_data['aenergy']['total']
-           voltage = 230
-           current = power / voltage
+           voltage = meter_data['voltage']
+           current = meter_data['current']
            
            self._dbusservice[pre + '/Voltage'] = voltage
            self._dbusservice[pre + '/Current'] = current
@@ -239,8 +239,8 @@ def main():
      
       #formatting 
       _kwh = lambda p, v: (str(round(v, 2)) + 'KWh')
-      _a = lambda p, v: (str(round(v, 1)) + 'A')
-      _w = lambda p, v: (str(round(v, 1)) + 'W')
+      _a = lambda p, v: (str(round(v, 2)) + 'A')
+      _w = lambda p, v: (str(round(v, 0)) + 'W')
       _v = lambda p, v: (str(round(v, 1)) + 'V')   
      
       #start our main-service
