@@ -60,8 +60,8 @@ After that call the install.sh script.
 The following script should do everything for you:
 ```
 wget https://github.com/lennardini/dbus-shelly-1pmPlus-pvinverter/archive/refs/heads/main.zip
-unzip main.zip "dbus-shelly-1pm-pvinverter-main/*" -d /data
-mv /data/dbus-shelly-1pm-pvinverter-main /data/dbus-shelly-1pm-plus-pvinverter
+unzip main.zip "dbus-shelly-1pmPlus-pvinverter-main/*" -d /data
+mv /data/dbus-shelly-1pmPlus-pvinverter-main /data/dbus-shelly-1pm-plus-pvinverter
 chmod a+x /data/dbus-shelly-1pm-plus-pvinverter/install.sh
 /data/dbus-shelly-1pm-plus-pvinverter/install.sh
 rm main.zip
