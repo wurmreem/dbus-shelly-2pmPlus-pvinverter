@@ -66,10 +66,10 @@ class DbusShellyBaseService:
     gobject.timeout_add(config.getint('DEFAULT', 'SignOfLifeLog') * 60 * 1000, self._signOfLife)
 
   def _signOfLife(self):
-    logging.info("--- Start: sign of life ---")
-    logging.info("Last _update() call: %d", self._lastUpdate)
-    logging.info("Last '/Ac/Power': %s", self._dbusservice['/Ac/Power'])
-    logging.info("--- End: sign of life ---")
+    #logging.info("--- Start: sign of life ---")
+    #logging.info("Last _update() call: %d", self._lastUpdate)
+    #logging.info("Last '/Ac/Power': %s", self._dbusservice['/Ac/Power'])
+    #logging.info("--- End: sign of life ---")
     return True
 
   def _handlechangedvalue(self, path, value):
