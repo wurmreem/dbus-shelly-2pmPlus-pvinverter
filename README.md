@@ -1,6 +1,8 @@
 # dbus-shelly-1pmPlus-pvinverter
-This Fork is for Shelly 1PM Plus Only!!!!!     
-Integrate Shelly 1PM PLUS into Victron Energies Venus OS
+This Fork is for Shelly 1PM / Plus and also for 3Phase inverters who can be mesured with 1 Shelly 1 PM / Plus.
+The Plus Shellys are Shelly gen 2 and they are different to the old round formed Shelly 1 PM.
+Both types are supported, and it can be set in the config file.
+Integrate Shelly 1PM (PLUS) into Victron Energies Venus OS
 
 
 ## Purpose
@@ -61,9 +63,9 @@ The following script should do everything for you:
 ```
 wget https://github.com/lennardini/dbus-shelly-1pmPlus-pvinverter/archive/refs/heads/main.zip
 unzip main.zip "dbus-shelly-1pmPlus-pvinverter-main/*" -d /data
-mv /data/dbus-shelly-1pmPlus-pvinverter-main /data/dbus-shelly-1pm-plus-pvinverter
-chmod a+x /data/dbus-shelly-1pm-plus-pvinverter/install.sh
-/data/dbus-shelly-1pm-plus-pvinverter/install.sh
+mv /data/dbus-shelly-1pmPlus-pvinverter-main /data/dbus-shelly-1pm-plus-pvinverter-1
+chmod a+x /data/dbus-shelly-1pm-plus-pvinverter-1/install.sh
+/data/dbus-shelly-1pm-plus-pvinverter-1/install.sh
 rm main.zip
 ```
 ⚠️ Check configuration after that - because service is already installed an running and with wrong connection data (host, username, pwd) you will spam the log-file
