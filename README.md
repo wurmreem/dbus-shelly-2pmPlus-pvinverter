@@ -23,7 +23,7 @@ This project is my first on GitHub and with the Victron Venus OS, so I took some
 ## How it works
 ### My setup
 - Shelly 1PM Plus with latest firmware (20220209-094317/v1.11.8-g8c7bb8d)
-  - Measuring AC output of NAME_YOUR_INVERTER on phase L3 
+  - Measuring AC output of Shelly-Inverter 1 on phase L3 
   - Connected to Wifi netowrk "A" with a known IP  
 - Venus OS on Raspberry PI 4 4GB version 1.1 - Firmware v3.13
   - Connected to Wifi netowrk "A"
