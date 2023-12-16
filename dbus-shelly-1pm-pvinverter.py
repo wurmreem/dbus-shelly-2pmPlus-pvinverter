@@ -127,7 +127,7 @@ class DbusShellyBaseService:
       #update lastupdate vars
       self._lastUpdate = time.time()
     except Exception as e:
-      #logging.critical('Error at %s', '_update', exc_info=e)
+      logging.critical('Error at %s', '_update', exc_info=e)
 
     # return true, otherwise add_timeout will be removed from GObject
     return True
@@ -238,7 +238,7 @@ def main():
                       handlers=logging_handlers)
 
   try:
-      #logging.info("Start")
+      logging.info("Start")
 
       from dbus.mainloop.glib import DBusGMainLoop
       # Have a mainloop, so we can send/receive asynchronous calls to and from dbus
@@ -276,11 +276,11 @@ def main():
         },
         config=config)
 
-      #logging.info('Connected to dbus, and switching over to gobject.MainLoop() (= event based)')
+      logging.info('Connected to dbus, and switching over to gobject.MainLoop() (= event based)')
       mainloop = gobject.MainLoop()
       mainloop.run()
   except Exception as e:
-    #logging.critical('Error at %s', 'main', exc_info=e)
+    logging.critical('Error at %s', 'main', exc_info=e)
 
 if __name__ == "__main__":
   main()
