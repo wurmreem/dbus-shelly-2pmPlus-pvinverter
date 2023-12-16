@@ -42,7 +42,6 @@ So what is the script doing:
 Thats it 😄
 
 ### Pictures
-![Tile Overview](img/venus-os-tile-overview.PNG)
 ![Remote Console - Overview](img/ShellyInverter1.JPG) 
 ![SmartMeter - Values](img/ShellyInverter11.JPG)
 ![SmartMeter - Device Details](img/ShellyInverter12.JPG)
