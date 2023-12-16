@@ -73,7 +73,7 @@ class DbusShellyBaseService:
     return True
 
   def _handlechangedvalue(self, path, value):
-    logging.debug("someone else updated %s to %s", path, value)
+    #logging.debug("someone else updated %s to %s", path, value)
     return True # accept the change
 
   def _getShellyBaseUrl(self):
@@ -119,7 +119,7 @@ class DbusShellyBaseService:
       total_power, total_energy = self._getShellyData()
 
       #logging
-      logging.debug("Power: %d, Energy: %d", total_power, total_energy)
+      #logging.debug("Power: %d, Energy: %d", total_power, total_energy)
 
       # increment UpdateIndex - to show that new data is available (overflow from 255 to 0)
       self._dbusservice['/UpdateIndex'] = (self._dbusservice['/UpdateIndex'] + 1) % 256
@@ -127,7 +127,7 @@ class DbusShellyBaseService:
       #update lastupdate vars
       self._lastUpdate = time.time()
     except Exception as e:
-      logging.critical('Error at %s', '_update', exc_info=e)
+      #logging.critical('Error at %s', '_update', exc_info=e)
 
     # return true, otherwise add_timeout will be removed from GObject
     return True
