@@ -226,19 +226,19 @@ def main():
   config = ConfigParser()
   config.read(str(script_path.parent / "config.ini"))
 
-  logging_handlers = [logging.StreamHandler()]
-  logging_file = config.get("DEFAULT", "LogFile")
-  if logging_file:
-    logging_handlers.append(logging.FileHandler(str(script_path.parent / logging_file)))
+  #logging_handlers = [logging.StreamHandler()]
+  #logging_file = config.get("DEFAULT", "LogFile")
+  #if logging_file:
+  #  logging_handlers.append(logging.FileHandler(str(script_path.parent / logging_file)))
 
   #configure logging
-  logging.basicConfig(format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
-                      datefmt='%Y-%m-%d %H:%M:%S',
-                      level=logging.INFO,
-                      handlers=logging_handlers)
+  #logging.basicConfig(format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+   #                   datefmt='%Y-%m-%d %H:%M:%S',
+   #                   level=logging.INFO,
+   #                   handlers=logging_handlers)
 
   try:
-      logging.info("Start")
+      #logging.info("Start")
 
       from dbus.mainloop.glib import DBusGMainLoop
       # Have a mainloop, so we can send/receive asynchronous calls to and from dbus
@@ -276,7 +276,7 @@ def main():
         },
         config=config)
 
-      logging.info('Connected to dbus, and switching over to gobject.MainLoop() (= event based)')
+      #logging.info('Connected to dbus, and switching over to gobject.MainLoop() (= event based)')
       mainloop = gobject.MainLoop()
       mainloop.run()
   except Exception as e:
