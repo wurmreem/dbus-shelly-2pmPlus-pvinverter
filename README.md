@@ -43,9 +43,9 @@ Thats it 😄
 
 ### Pictures
 ![Tile Overview](img/venus-os-tile-overview.PNG)
-![Remote Console - Overview](img/venus-os-remote-console-overview.PNG) 
-![SmartMeter - Values](img/venus-os-shelly1pm-pvinverter.PNG)
-![SmartMeter - Device Details](img/venus-os-shelly1pm-pvinverter-devicedetails.PNG)
+![Remote Console - Overview](img/ShellyInverter1.JPG) 
+![SmartMeter - Values](img/ShellyInverter11.JPG)
+![SmartMeter - Device Details](img/ShellyInverter12.JPG)
 
 
 ## Install & Configuration
