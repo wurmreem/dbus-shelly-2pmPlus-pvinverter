@@ -73,7 +73,7 @@ class DbusShellyBaseService:
     return True
 
   def _handlechangedvalue(self, path, value):
-    logging.debug("someone else updated %s to %s", path, value)
+    #logging.debug("someone else updated %s to %s", path, value)
     return True # accept the change
 
   def _getShellyBaseUrl(self):
@@ -119,7 +119,7 @@ class DbusShellyBaseService:
       total_power, total_energy = self._getShellyData()
 
       #logging
-      logging.debug("Power: %d, Energy: %d", total_power, total_energy)
+      #logging.debug("Power: %d, Energy: %d", total_power, total_energy)
 
       # increment UpdateIndex - to show that new data is available (overflow from 255 to 0)
       self._dbusservice['/UpdateIndex'] = (self._dbusservice['/UpdateIndex'] + 1) % 256
@@ -127,7 +127,7 @@ class DbusShellyBaseService:
       #update lastupdate vars
       self._lastUpdate = time.time()
     except Exception as e:
-      logging.critical('Error at %s', '_update', exc_info=e)
+      #logging.critical('Error at %s', '_update', exc_info=e)
 
     # return true, otherwise add_timeout will be removed from GObject
     return True
@@ -226,19 +226,19 @@ def main():
   config = ConfigParser()
   config.read(str(script_path.parent / "config.ini"))
 
-  logging_handlers = [logging.StreamHandler()]
-  logging_file = config.get("DEFAULT", "LogFile")
-  if logging_file:
-    logging_handlers.append(logging.FileHandler(str(script_path.parent / logging_file)))
+  #logging_handlers = [logging.StreamHandler()]
+  #logging_file = config.get("DEFAULT", "LogFile")
+  #if logging_file:
+  #  logging_handlers.append(logging.FileHandler(str(script_path.parent / logging_file)))
 
   #configure logging
-  logging.basicConfig(format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
-                      datefmt='%Y-%m-%d %H:%M:%S',
-                      level=logging.INFO,
-                      handlers=logging_handlers)
+  #logging.basicConfig(format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
+  #                    datefmt='%Y-%m-%d %H:%M:%S',
+  #                   level=logging.INFO,
+  #                   handlers=logging_handlers)
 
   try:
-      logging.info("Start")
+      #logging.info("Start")
 
       from dbus.mainloop.glib import DBusGMainLoop
       # Have a mainloop, so we can send/receive asynchronous calls to and from dbus
@@ -276,11 +276,11 @@ def main():
         },
         config=config)
 
-      logging.info('Connected to dbus, and switching over to gobject.MainLoop() (= event based)')
+      #logging.info('Connected to dbus, and switching over to gobject.MainLoop() (= event based)')
       mainloop = gobject.MainLoop()
       mainloop.run()
   except Exception as e:
-    logging.critical('Error at %s', 'main', exc_info=e)
+    #logging.critical('Error at %s', 'main', exc_info=e)
 
 if __name__ == "__main__":
   main()
