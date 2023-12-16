@@ -22,18 +22,10 @@ This project is my first on GitHub and with the Victron Venus OS, so I took some
 
 ## How it works
 ### My setup
-- 3-Phase installation
 - Shelly 1PM Plus with latest firmware (20220209-094317/v1.11.8-g8c7bb8d)
   - Measuring AC output of NAME_YOUR_INVERTER on phase L3 
   - Connected to Wifi netowrk "A" with a known IP  
-- Shelly 1PM Plus with latest firmware (20220209-094317/v1.11.8-g8c7bb8d)
-  - Measuring AC output of Envertech EVT-500 and Hoymiles HM-800 on phase L3
-  - Connected to Wifi netowrk "A" with a known IP  
-- Shelly 3EM used as a grid meter
-  - Connected over https://github.com/fabian-lauer/dbus-shelly-3em-smartmeter
-  - Connected to Wifi netowrk "A" with a known IP  
 - Venus OS on Raspberry PI 4 4GB version 1.1 - Firmware v3.13
-  - No other devices from Victron connected
   - Connected to Wifi netowrk "A"
 
 ### Details / Process
@@ -63,6 +55,7 @@ After that call the install.sh script.
 
 The following script should do everything for you:
 ```
+FOR SHELLY 1:
 wget https://github.com/lennardini/dbus-shelly-1pmPlus-pvinverter/archive/refs/heads/main.zip
 unzip main.zip "dbus-shelly-1pmPlus-pvinverter-main/*" -d /data
 mv /data/dbus-shelly-1pmPlus-pvinverter-main /data/dbus-shelly-1pm-plus-pvinverter-1
@@ -70,6 +63,7 @@ chmod a+x /data/dbus-shelly-1pm-plus-pvinverter-1/install.sh
 /data/dbus-shelly-1pm-plus-pvinverter-1/install.sh
 rm main.zip
 
+FOR SHELLY 2:
 wget https://github.com/lennardini/dbus-shelly-1pmPlus-pvinverter/archive/refs/heads/main.zip
 unzip main.zip "dbus-shelly-1pmPlus-pvinverter-main/*" -d /data
 mv /data/dbus-shelly-1pmPlus-pvinverter-main /data/dbus-shelly-1pm-plus-pvinverter-2
@@ -77,6 +71,7 @@ chmod a+x /data/dbus-shelly-1pm-plus-pvinverter-2/install.sh
 /data/dbus-shelly-1pm-plus-pvinverter-2/install.sh
 rm main.zip
 
+FOR SHELLY 3:
 wget https://github.com/lennardini/dbus-shelly-1pmPlus-pvinverter/archive/refs/heads/main.zip
 unzip main.zip "dbus-shelly-1pmPlus-pvinverter-main/*" -d /data
 mv /data/dbus-shelly-1pmPlus-pvinverter-main /data/dbus-shelly-1pm-plus-pvinverter-3
