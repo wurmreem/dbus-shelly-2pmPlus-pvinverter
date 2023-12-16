@@ -82,19 +82,22 @@ chmod a+x /data/dbus-shelly-1pm-plus-pvinverter-3/install.sh
 /data/dbus-shelly-1pm-plus-pvinverter-3/install.sh
 rm main.zip
 ```
-⚠️ Check configuration after that - because service is already installed an running and with wrong connection data (host, username, pwd) you will spam the log-file
+⚠️ Check configuration after that - because service is already installed an running and with wrong connection data (host, username, pwd) you will spam the log-file (disabled by default)
 
 ### Change config.ini
-Within the project there is a file `/data/dbus-shelly-1pm-plus-pvinverter-1/config.ini` - just change the values - most important is the deviceinstance, custom name and phase under "DEFAULT" and host, username and password in section "ONPREMISE". More details below:
+Within the project there is a file `/data/dbus-shelly-1pm-plus-pvinverter-1/config.ini` - just change the values - most important is the deviceinstance, INSTANCE NUMBER MUST BE CHANGED FOR THE SHELLY 2 AND 3! custom name and phase under "DEFAULT" and host, username and password in section "ONPREMISE". More details below:
 
 | Section  | Config vlaue | Explanation |
 | ------------- | ------------- | ------------- |
+| DEFAULT  | ShellyPlus | default yes, so for PLUS Shellys, for old non plus Shellys typ 'no' |
 | DEFAULT  | AccessType | Fixed value 'OnPremise' |
 | DEFAULT  | SignOfLifeLog  | Time in minutes how often a status is added to the log-file `current.log` with log-level INFO |
 | DEFAULT  | Deviceinstance | Unique ID identifying the shelly 1pm in Venus OS |
 | DEFAULT  | CustomName | Name shown in Remote Console (e.g. name of pv inverter) |
 | DEFAULT  | Phase | Valid values L1, L2 or L3: represents the phase where pv inverter is feeding in |
-| ONPREMISE  | Host | IP or hostname of on-premise Shelly 3EM web-interface |
+| DEFAULT  | LogFile | Default not set, so no logging. If you wish to log type a logfilename |
+| ONPREMISE  | Host | IP or hostname of on-premise Shelly web-interface |
+| ONPREMISE  | Input | The Position of the Shelly 0=ACIN 1=ACOUT 2=ACOUT2 |
 | ONPREMISE  | Username | Username for htaccess login - leave blank if no username/password required |
 | ONPREMISE  | Password | Password for htaccess login - leave blank if no username/password required |
 
