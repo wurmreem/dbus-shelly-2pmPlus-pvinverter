@@ -3,6 +3,8 @@ This Fork is for Shelly 1PM / Plus and also for 3Phase inverters who can be mesu
 The Plus Shellys are Shelly gen 2 and they are different to the old round formed Shelly 1 PM.
 Both types are supported, and it can be set in the config file.
 Integrate Shelly 1PM (PLUS) into Victron Energies Venus OS
+Logfile ist not set in the config by default because of potetial issues with file size in case of long time disconnects.
+To enalbe logging just name a log file in the config.ini
 
 
 ## Purpose
@@ -22,7 +24,7 @@ This project is my first on GitHub and with the Victron Venus OS, so I took some
 ### My setup
 - 3-Phase installation
 - Shelly 1PM Plus with latest firmware (20220209-094317/v1.11.8-g8c7bb8d)
-  - Measuring AC output of SUN-2000 GTIL on phase L3
+  - Measuring AC output of NAME_YOUR_INVERTER on phase L3 
   - Connected to Wifi netowrk "A" with a known IP  
 - Shelly 1PM Plus with latest firmware (20220209-094317/v1.11.8-g8c7bb8d)
   - Measuring AC output of Envertech EVT-500 and Hoymiles HM-800 on phase L3
@@ -30,7 +32,7 @@ This project is my first on GitHub and with the Victron Venus OS, so I took some
 - Shelly 3EM used as a grid meter
   - Connected over https://github.com/fabian-lauer/dbus-shelly-3em-smartmeter
   - Connected to Wifi netowrk "A" with a known IP  
-- Venus OS on Raspberry PI 4 4GB version 1.1 - Firmware v2.84
+- Venus OS on Raspberry PI 4 4GB version 1.1 - Firmware v3.13
   - No other devices from Victron connected
   - Connected to Wifi netowrk "A"
 
