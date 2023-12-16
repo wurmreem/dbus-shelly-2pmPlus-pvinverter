@@ -89,9 +89,9 @@ Within the project there is a file `/data/dbus-shelly-1pm-plus-pvinverter-1/conf
 
 | Section  | Config vlaue | Explanation |
 | ------------- | ------------- | ------------- |
-| DEFAULT  | ShellyPlus | default yes, so for PLUS Shellys, for old non plus Shellys typ 'no' |
+| DEFAULT  | ShellyPlus | Default yes, so for PLUS Shellys, for old non plus Shellys typ 'no' |
 | DEFAULT  | AccessType | Fixed value 'OnPremise' |
-| DEFAULT  | SignOfLifeLog  | Time in minutes how often a status is added to the log-file `current.log` with log-level INFO |
+| DEFAULT  | SignOfLifeLog  | Default set to 0 (no logging) Time in minutes how often a status is added to the log-file `current.log` with log-level INFO |
 | DEFAULT  | Deviceinstance | Unique ID identifying the shelly 1pm in Venus OS |
 | DEFAULT  | CustomName | Name shown in Remote Console (e.g. name of pv inverter) |
 | DEFAULT  | Phase | Valid values L1, L2 or L3: represents the phase where pv inverter is feeding in |
