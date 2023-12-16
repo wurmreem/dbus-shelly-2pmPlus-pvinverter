@@ -54,32 +54,33 @@ Just grap a copy of the main branche and copy them to a folder under `/data/` e.
 After that call the install.sh script.
 
 The following script should do everything for you:
-```
+
 FOR SHELLY 1:
+```
 wget https://github.com/lennardini/dbus-shelly-1pmPlus-pvinverter/archive/refs/heads/main.zip
 unzip main.zip "dbus-shelly-1pmPlus-pvinverter-main/*" -d /data
 mv /data/dbus-shelly-1pmPlus-pvinverter-main /data/dbus-shelly-1pm-plus-pvinverter-1
 chmod a+x /data/dbus-shelly-1pm-plus-pvinverter-1/install.sh
 /data/dbus-shelly-1pm-plus-pvinverter-1/install.sh
 rm main.zip
-
+```
 FOR SHELLY 2:
+```
 wget https://github.com/lennardini/dbus-shelly-1pmPlus-pvinverter/archive/refs/heads/main.zip
 unzip main.zip "dbus-shelly-1pmPlus-pvinverter-main/*" -d /data
 mv /data/dbus-shelly-1pmPlus-pvinverter-main /data/dbus-shelly-1pm-plus-pvinverter-2
 chmod a+x /data/dbus-shelly-1pm-plus-pvinverter-2/install.sh
 /data/dbus-shelly-1pm-plus-pvinverter-2/install.sh
 rm main.zip
-
+```
 FOR SHELLY 3:
+```
 wget https://github.com/lennardini/dbus-shelly-1pmPlus-pvinverter/archive/refs/heads/main.zip
 unzip main.zip "dbus-shelly-1pmPlus-pvinverter-main/*" -d /data
 mv /data/dbus-shelly-1pmPlus-pvinverter-main /data/dbus-shelly-1pm-plus-pvinverter-3
 chmod a+x /data/dbus-shelly-1pm-plus-pvinverter-3/install.sh
 /data/dbus-shelly-1pm-plus-pvinverter-3/install.sh
 rm main.zip
-
-
 ```
 ⚠️ Check configuration after that - because service is already installed an running and with wrong connection data (host, username, pwd) you will spam the log-file
 
