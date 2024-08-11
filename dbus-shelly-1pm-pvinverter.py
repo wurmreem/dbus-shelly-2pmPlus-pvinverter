@@ -197,7 +197,8 @@ class DbusShelly1PlusPMService(DbusShellyBaseService):
       active_phase = phase == pvinverter_phase
 
       if active_phase:
-        power = meter_data['apower']
+        # if you need positiv value in Venus OS
+        power = meter_data['apower']*-1
         energy = meter_data['aenergy']["total"] # energy counter in Watt-hour
         voltage = meter_data['voltage']
         current = meter_data['current']
